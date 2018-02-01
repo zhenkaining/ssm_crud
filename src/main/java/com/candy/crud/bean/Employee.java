@@ -60,4 +60,15 @@ public class Employee {
     public void setDepartment(Department department) {
         this.department = department;
     }
+
+    public Employee() {
+    }
+
+    public Employee(Integer empId, String empName, String gender, String email, Integer dId) {
+        this.empId = empId;
+        this.empName = empName;
+        this.gender = gender;
+        this.email = email;
+        this.dId = dId;
+    }
 }

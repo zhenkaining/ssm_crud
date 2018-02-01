@@ -36,6 +36,11 @@
     </bean>
 
 
+    <!-- 配置sqlSession-->
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+        <constructor-arg name="executorType" value="BATCH"/>
+    </bean>
 
     <!-- 事务控制的配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -46,18 +51,18 @@
 
     <!--&lt;!&ndash; 开启基于注解的事物，也可以使用xml配置的形式（比较重要的使用配置式）&ndash;&gt;-->
     <!--<aop:config>-->
-        <!--&lt;!&ndash; 配置事物切入点&ndash;&gt;-->
-        <!--<aop:pointcut id="txPoint" expression="execution(* com.candy.crud.service..*(..))"></aop:pointcut>-->
-        <!--&lt;!&ndash; 配置事务增强 &ndash;&gt;-->
-        <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>-->
+    <!--&lt;!&ndash; 配置事物切入点&ndash;&gt;-->
+    <!--<aop:pointcut id="txPoint" expression="execution(* com.candy.crud.service..*(..))"></aop:pointcut>-->
+    <!--&lt;!&ndash; 配置事务增强 &ndash;&gt;-->
+    <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="txPoint"/>-->
     <!--</aop:config>-->
     <!--&lt;!&ndash;配置事务增强，事务如何切入  &ndash;&gt;-->
     <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
-        <!--<tx:attributes>-->
-            <!--&lt;!&ndash; 所有方法都是事务方法 &ndash;&gt;-->
-            <!--<tx:method name="*"/>-->
-            <!--&lt;!&ndash;以get开始的所有方法  &ndash;&gt;-->
-            <!--<tx:method name="get*" read-only="true"/>-->
-        <!--</tx:attributes>-->
+    <!--<tx:attributes>-->
+    <!--&lt;!&ndash; 所有方法都是事务方法 &ndash;&gt;-->
+    <!--<tx:method name="*"/>-->
+    <!--&lt;!&ndash;以get开始的所有方法  &ndash;&gt;-->
+    <!--<tx:method name="get*" read-only="true"/>-->
+    <!--</tx:attributes>-->
     <!--</tx:advice>-->
 </beans>
