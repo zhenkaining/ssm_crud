@@ -31,8 +31,8 @@ public class EmployeeMapperTest {
     public void testCRUD() {
         System.out.println(departmentMapper);
 //        1.插入部门数据
-//        departmentMapper.insertSelective(new Department(null,"开发部"));
-//        departmentMapper.insertSelective(new Department(null,"测试部"));
+        departmentMapper.insertSelective(new Department(null,"开发部"));
+        departmentMapper.insertSelective(new Department(null,"测试部"));
 
 
 //        2.插入员工数据
