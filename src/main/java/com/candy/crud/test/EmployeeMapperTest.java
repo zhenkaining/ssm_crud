@@ -2,6 +2,7 @@ package com.candy.crud.test;
 
 import com.candy.crud.bean.Department;
 import com.candy.crud.bean.Employee;
+import com.candy.crud.controller.EmployeeController;
 import com.candy.crud.dao.DepartmentMapper;
 import com.candy.crud.dao.EmployeeMapper;
 import org.apache.ibatis.session.SqlSession;
@@ -46,5 +47,11 @@ public class EmployeeMapperTest {
             mapper.insertSelective(new Employee(null,uid,"m",uid+"@163.com",1));
 
         }
+    }
+
+    @Test
+    public void testController(){
+        EmployeeController controller=new EmployeeController();
+        controller.getAll();
     }
 }

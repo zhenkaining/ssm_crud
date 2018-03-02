@@ -8,9 +8,7 @@
     <name>ssm_crud Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
-
     <dependencies>
-
 
         <!-- 引入项目依赖的jar包 -->
         <!-- SpringMVC 、Srping -->
@@ -105,6 +103,12 @@
             <version>4.12</version>
         </dependency>
 
+        <!--分页-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.1.2</version>
+        </dependency>
 
     </dependencies>
     <build>
